@@ -30,28 +30,28 @@
          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-easel"></i></div>
-             <h4 class="title"><a href="" class="stretched-link">Lorem Ipsum</a></h4>
+             <h4 class="title"><a href="{{ route('courses')  }}" class="stretched-link">الدورات والبطولات </a></h4>
            </div>
          </div><!--End Icon Box -->
 
          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-gem"></i></div>
-             <h4 class="title"><a href="" class="stretched-link">Sed ut perspiciatis</a></h4>
+             <h4 class="title"><a href="{{ route('news')  }}" class="stretched-link">الأخبار والأحداث </a></h4>
            </div>
          </div><!--End Icon Box -->
 
          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-geo-alt"></i></div>
-             <h4 class="title"><a href="" class="stretched-link">Magni Dolores</a></h4>
+             <h4 class="title"><a href="{{ route('members')  }}" class="stretched-link">الأعضاء </a></h4>
            </div>
          </div><!--End Icon Box -->
 
          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-command"></i></div>
-             <h4 class="title"><a href="" class="stretched-link">Nemo Enim</a></h4>
+             <h4 class="title"><a href="{{ route('about')  }}" class="stretched-link">عنا </a></h4>
            </div>
          </div><!--End Icon Box -->
 
@@ -66,7 +66,7 @@
 
 
 
-   <a  href="{{ route('courses')  }}" > الدورات والبطولات </a>
+   {{-- <a  href="{{ route('courses')  }}" > الدورات والبطولات </a>
    <br>
    <br>
    <a href="{{ route('news')  }}" > الاخبار والاحداث</a>
@@ -75,7 +75,7 @@
    <a href="{{ route('members')  }}" > الاعضاء </a>
    <br>
    <br>
-   <a href="{{ route('about')  }}" >   عنا </a>
+   <a href="{{ route('about')  }}" >   عنا </a> --}}
    </div>
   </div>
    @endsection
