@@ -1,8 +1,12 @@
 <?php
 
+use App\Mail\TestMail;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\CoursesController;
 use  App\Http\Controllers\user\ProfileController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +24,16 @@ Route::get('/', function () {
 })->name('welcome');
 
 
-// Route::get('/courses', function () {
+//admin
+Route::middleware(['auth','isAdmin'])->group(function(){
 
-//     return view('courses');
-// })->name('courses');
+    Route::get('/addCourse',[CoursesController::class,'create'])->name('addCourse');
+    Route::post('/addCourse',[CoursesController::class,'store'])->name('addCourse');
+    Route::get('allreg',[CoursesController::class,'showallreg']);
+});
+
+
+
 
 Route::get('/news', function () {
     return view('news');
@@ -41,12 +51,7 @@ Route::get('/about', function () {
 
  Route::get('/courses',[CoursesController::class,'show'])->name('courses');
 
- Route::get('allreg',[CoursesController::class,'showallreg']);
 
- Route::get('/addCourse',[CoursesController::class,'create'])->name('addCourse');
- Route::post('/addCourse',[CoursesController::class,'store'])->name('addCourse');
-
-// Route::view('/addCourse','addCourse');
 
 
 
@@ -57,8 +62,14 @@ Route::get('/about', function () {
 Route::middleware('verified')->group( function (){
     Route::get('/courseCheckout/{id}',[CoursesController::class,'checkout'])->name('courseCheckout');
     Route::get('user/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::get('/courseCheckout',[CoursesController::class,'createReg']);
    Route::post('/courseCheckout',[CoursesController::class,'storeReg']);
+//mail route
+    //Route::post('/courseCheckout',[CoursesController::class,'sentmail']);
+
+    // return new   TestMail();
+
+
+
    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 });
@@ -70,4 +81,10 @@ Auth::routes(['verify'=> true]);
 
 
 
+// //mail route
+// Route::get('/email',function(){
+// Mail::to('imoon.gamedev@gmail.com')->send(new TestMail());
+// return redirect ('/');
 
+// // return new   TestMail();
+// });

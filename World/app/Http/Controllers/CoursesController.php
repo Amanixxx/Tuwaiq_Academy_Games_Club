@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\courses;
 use App\Models\allreg;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 class CoursesController extends Controller
 {
@@ -53,13 +56,11 @@ return view('/courseCheckout',['course'=>$course]);
 
 
 
-                 // course reg//
+// course reg//
 
-public function createReg(){
-  return  view('courseCheckout');
-     }
+
   public function storeReg(Request $request){
-// dd($request);
+
  allreg::create([
   'Name'=>$request->fullname,
   'NationalID'=>$request->NationalID,
@@ -70,10 +71,10 @@ public function createReg(){
   'CourseID'=>$request->CourseID,
   'kkuID'=>$request->kkuID,
  // 'statuse'=>$request->,
-
  ]);
-    //  return back() ;
-    return redirect('/courses') ;
-          }
+ Mail::to('imoon.gamedev@gmail.com')->send(new TestMail());
+ return redirect('/courses');
+}
 
 }
+
