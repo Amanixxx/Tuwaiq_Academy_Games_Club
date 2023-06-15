@@ -68,7 +68,8 @@ return view('/courseCheckout',['course'=>$course]);
   'country'=>$request-> country,
   'phone' =>$request->phone,
   'address'=>$request->address,
-  'CourseID'=>$request->CourseID,
+  //'CourseID'=>$request->CourseID,
+  'course_id'=>$request->course_id,
   'kkuID'=>$request->kkuID,
  // 'statuse'=>$request->,
  ]);
@@ -76,5 +77,18 @@ return view('/courseCheckout',['course'=>$course]);
  return redirect('/courses');
 }
 
+
+// // course info
+// public function courseInfo($id){
+
+
+//   $course=DB::table('courses')
+//   ->where('course_id','=',$id)
+//   ->first();
+//   return view('/courseInfo',['course'=>$course]);
+//   }
+
+
 }
+
 

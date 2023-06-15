@@ -41,7 +41,7 @@
   <form action="{{url('courseCheckout')}}" method="POST">
     @csrf
 
-<input type="hidden" id="CourseID" name="CourseID" value={{$course->id}}>
+<input type="hidden" id="course_id" name="course_id" value={{$course->id}}>
 {{-- first row --}}
     <div class="row">
       <div class="col">

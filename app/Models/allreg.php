@@ -20,7 +20,11 @@ protected $table="allreg";
          'address',
          'statuse',
          'kkuID',
- 'CourseID'
+         'course_id'
 
     ];
+
+    public  function courses(){
+ return $this->  belongsTo(courses::class);
+    }
 }

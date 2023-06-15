@@ -7,7 +7,7 @@
     <thead >
    <tr>
 <th>id</th>
-<th>CourseID</th>
+{{-- <th>CourseID</th> --}}
 <th>Name</th>
 <th>NationalID</th>
 <th>email</th>
@@ -17,13 +17,14 @@
 <th>statuse</th>
 <th>created_at</th>
 <th>updated_at</th>
+<th>course_id</th>
 </tr>
     </thead>
     <tbody>
 @foreach($allregs as $allreg)
     <tr>
         <td >{{$allreg['id']}}</td>
-        <td>{{$allreg['CourseID']}}</td>
+        {{-- <td>{{$allreg['CourseID']}}</td> --}}
         <td>{{$allreg['Name']}}</td>
         <td>{{$allreg['NationalID']}}</td>
         <td>{{$allreg['email']}}</td>
@@ -33,6 +34,7 @@
         <td>{{$allreg['statuse']}}</td>
         <td>{{$allreg['created_at']}}</td>
         <td>{{$allreg['updated_at']}}</td>
+        <td>{{$allreg['course_id']}}</td>
         </tr>
 
 

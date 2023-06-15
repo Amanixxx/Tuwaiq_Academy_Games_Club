@@ -74,6 +74,9 @@ Route::middleware('verified')->group( function (){
 
 });
 
+// //course info
+// Route::get('/courseInfo/{id}',[CoursesController::class,'courseInfo'])->name('courseInfo');
+
 
 
 // authentication part

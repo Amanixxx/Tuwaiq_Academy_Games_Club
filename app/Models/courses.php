@@ -15,4 +15,7 @@ protected $fillable =[
      'description',
      'Date'
 ];
+public  function   coursesModel(){
+return $this-> hasMany(coursesModel::class);
+}
 }

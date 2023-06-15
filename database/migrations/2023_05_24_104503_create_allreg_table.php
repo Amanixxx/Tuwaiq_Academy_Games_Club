@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('allreg', function (Blueprint $table) {
             $table->id();
             $table->integer("CourseID");
+
             $table->string("Name");
             $table->string("email");
             $table->string("country");
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->string("address");
             $table->string("statuse");
             $table->timestamps();
+
         });
     }
 
